@@ -1,0 +1,8 @@
+# Ignore Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+
+
+# Ignore passcode and api keys
+.env
+
