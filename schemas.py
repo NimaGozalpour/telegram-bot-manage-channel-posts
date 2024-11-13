@@ -1,4 +1,21 @@
 from pydantic import BaseModel, model_validator, ValidationError
+from datetime import datetime
+
+
+
+class User(BaseModel):
+    user_id: int
+    first_name: str = None
+    last_name: str = None
+    password: str
+    can_add_admin: bool
+    creation_date: datetime
+    signed_in: datetime = None
+
+
+
+
+
 
 class SearchInfo(BaseModel):
     viewSize: int

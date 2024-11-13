@@ -1,27 +1,41 @@
-from sqlalchemy import Column, Integer, Float, String, Boolean
+from sqlalchemy import Column, Integer, Float, String, Boolean, DateTime
 from database import Base
 
 
 # Create the models (tables)
-class product(Base):
+class Product(Base):
     __tablename__ = 'products'
 
     id = Column(Integer, primary_key=True, index=True)
     productId = Column(String)
-    modelNumber = Column(String)
-    price = Column(String)
-    salePrice = Column(String)
-    #discount = Column(String)
-    title = Column(String)
-    subTitle = Column(String)
+    productName = Column(String)
+    brand = Column(String)
+    productType = Column(String)
+    subType = Column(String)
+    price = Column(Float)
+    salePrice = Column(Float)
+    description = Column(String)
     rating = Column(String)
     ratingCount = Column(String)
-    brand = Column(String)
     sale = Column(String)
-    gender = Column(String)
-    outlet = Column(String)
-    color = Column(String)
-    sku = Column(String)
     availability = Column(String)
-    size = Column(String)
+    creation_date = Column(DateTime)
+    last_modified = Column(DateTime)
+
+
+# Create the models (tables)
+class BotUsers(Base):
+    __tablename__ = 'bot_user'
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer)
+    first_name = Column(String)
+    last_name = Column(String)
+    password = Column(String)
+    can_add_admin = Column(Boolean)
+    creation_date = Column(DateTime)
+    signed_in = Column(DateTime)
+
+
+
 

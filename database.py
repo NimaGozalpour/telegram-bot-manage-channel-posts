@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 # Define the engine and session
-DATABASE_URL = "postgresql://python_user:yEaR1(9#@localhost:5432/clothdb"
+DATABASE_URL = "sqlite:///SGfruit.db"
 
 # Create engine and session
 engine = create_engine(DATABASE_URL)
@@ -21,3 +21,5 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
